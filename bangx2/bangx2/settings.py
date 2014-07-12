@@ -1,5 +1,5 @@
 """
-Django settings for bang project.
+Django settings for bangx2 project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -47,9 +48,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'bang.urls'
+ROOT_URLCONF = 'bangx2.urls'
 
-WSGI_APPLICATION = 'bang.wsgi.application'
+WSGI_APPLICATION = 'bangx2.wsgi.application'
 
 
 # Database
@@ -80,3 +81,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Overwrite configuration
+try:
+    from local.local_settings import *
+except Exception, e:
+    pass
