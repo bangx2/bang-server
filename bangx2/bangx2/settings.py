@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'account',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,7 +83,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+# Custom User
+
+AUTH_USER_MODEL = 'account.User'
+
+
 # Overwrite configuration
+
 try:
     from local.local_settings import *
 except Exception, e:
