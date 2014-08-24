@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'account',
     'bang',
+    'survey',
     'rest_framework.authtoken',
 )
 
