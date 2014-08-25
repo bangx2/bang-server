@@ -70,6 +70,13 @@ DATABASES = {
 }
 
 
+# Mongo settings
+
+MONGO_HOST = '127.0.0.1'
+MONGO_PORT = 27017
+MONGO_DB = 'bangx2'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -93,7 +100,6 @@ STATIC_URL = '/static/'
 # Custom User
 
 AUTH_USER_MODEL = 'account.User'
-
 
 
 # Django REST Framework Settings
@@ -126,6 +132,8 @@ try:
 except Exception, e:
     print e
 
+
+# http://www.django-rest-framework.org/api-guide/authentication
 
 from django.contrib.auth import get_user_model
 from django.db.models.signals import post_save

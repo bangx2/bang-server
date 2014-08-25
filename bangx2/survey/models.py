@@ -1,6 +1,7 @@
 from django.db import models
 from account.models import User
 from bang.models import Bang
+from datetime import datetime
 
 
 class Survey(models.Model):
@@ -18,10 +19,18 @@ class Survey(models.Model):
     notify = models.BooleanField(default=True)
     only_invitee = models.BooleanField(default=True)
 
+    # id of survey schema in mongo
     schema = models.CharField(max_length=20, null=False, blank=False)
+    # id of result doccument in mongo
     result = models.CharField(max_length=20, null=False, blank=False)
 
     invitee = models.ManyToManyField(User, through="InviteeShip")
+
+
+class SurveyResult(models.Model):
+    answerer = models.ForeignKey(User, related_name="answered_surveys")
+    modify_time = models.DateTimeField(null=False, blank=False,\
+            default=datetime.now())
 
 
 class InviteeShip(models.Model):
