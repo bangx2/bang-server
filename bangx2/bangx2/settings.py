@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'bang',
     'survey',
     'rest_framework.authtoken',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -15,4 +15,5 @@ urlpatterns = patterns('',
         'rest_framework.authtoken.views.obtain_auth_token'),
 
     url(r'^bang/', include('bang.urls')),
+    url(r'^survey/', include('survey.urls')),
 )
