@@ -32,6 +32,7 @@ def get_invited_surverys_within_bang(request):
 def create_survey(request):
     data = request.DATA.copy()
     data["owner"] = request.user.pk
+    data["bang"] = request.current_bang.pk
     serializer = SurveySerializer(data=data)
     if serializer.is_valid():
         serializer.save()

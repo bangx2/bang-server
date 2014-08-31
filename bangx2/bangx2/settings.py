@@ -127,8 +127,9 @@ CORS_ORIGIN_WHITELIST = (
 )
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = (
-    'X-Bang-Id',
+    'Content-Type',
     'Authorization',
+    'X-Bang-Id',
 )
 
 
