@@ -53,6 +53,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # custom for bang
+    'bang.middleware.BangMiddleware',
 )
 
 ROOT_URLCONF = 'bangx2.urls'
@@ -124,6 +126,15 @@ CORS_ORIGIN_WHITELIST = (
     '127.0.0.1:9000',
 )
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = (
+    'X-Bang-Id',
+    'Authorization',
+)
+
+
+# md5 seed
+
+MD5_SEED = 'bangx2.com'
 
 
 # Overwrite configuration

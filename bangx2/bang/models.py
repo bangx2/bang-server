@@ -9,3 +9,5 @@ class Bang(models.Model):
 
     members = models.ManyToManyField(User, related_name="bangs")
     owner = models.ForeignKey(User, related_name="own_bangs")
+
+    bang_id = models.CharField(max_length=32)

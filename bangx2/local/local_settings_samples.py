@@ -23,3 +23,8 @@ local settings, will overwrite bangx2/settings
 MONGO_HOST = '127.0.0.1'
 MONGO_PORT = 27017
 MONGO_DB = 'bangx2'
+
+
+# md5 seed
+
+MD5_SEED = 'bangx2.com'
