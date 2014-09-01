@@ -28,3 +28,10 @@ MONGO_DB = 'bangx2'
 # md5 seed
 
 MD5_SEED = 'bangx2.com'
+
+
+# django-cors-headers settings, 
+
+CORS_ORIGIN_WHITELIST = (
+    '127.0.0.1:9000',
+)
