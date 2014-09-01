@@ -47,7 +47,7 @@ def create_bang(request):
     data["members"] = request.user.pk
     data["owner"] = request.user.pk
     # create bang_id by md5
-    data["bang_id"] = get_md5("%s%s%s"\
+    data["bang_id"] = get_md5("%s%s"\
             % (request.user.pk, datetime.now()))
     serializer = BangSerializer(data=data)
     if serializer.is_valid():
