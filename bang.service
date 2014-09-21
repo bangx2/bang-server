@@ -1,0 +1,14 @@
+[Unit]
+Description=bangx2.com
+Documentation=http:/www.bangx2.com/
+ 
+[Service]
+Type=forking
+PIDFile=/var/run/bang/supervisord.pid
+ExecStart=/usr/bin/supervisord -c /home/bang/bang-server/supervisord.conf
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+PrivateTmp=true
+ 
+[Install]
+WantedBy=multi-user.target
