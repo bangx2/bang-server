@@ -18,6 +18,8 @@ urlpatterns = patterns(
     url(r'^bang-detail/$', 'get_bang_detail'),
     url(r'^bang-members/$', 'get_bang_members'),
 
-)
+    url(r'^bang-logo-uptoken/(?P<bang_id>[\w-]+)/$',\
+        'get_bang_logo_uptoken'),
 
+)
 

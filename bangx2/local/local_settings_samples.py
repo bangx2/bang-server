@@ -35,3 +35,13 @@ MD5_SEED = 'bangx2.com'
 CORS_ORIGIN_WHITELIST = (
     '127.0.0.1:9000',
 )
+
+
+# qiniu settings
+
+import qiniu.conf
+qiniu.conf.ACCESS_KEY = "<YOUR_APP_ACCESS_KEY>"
+qiniu.conf.SECRET_KEY = "<YOUR_APP_SECRET_KEY>"
+
+QINIU_UPLOAD_PUBLIC = "bang"
+QINIU_UPLOAD_PRIVATE = "bang-security"

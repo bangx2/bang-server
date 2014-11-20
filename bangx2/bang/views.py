@@ -6,6 +6,8 @@ from .serializers import BangSerializer
 from account.serializers import UserSerializer
 from datetime import datetime
 from common.utils import get_md5
+import qiniu.rs
+from bangx2.settings import QINIU_UPLOAD_PUBLIC
 
 
 # from rest_framework import generics
@@ -54,6 +56,16 @@ def create_bang(request):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(["GET"])
+def get_bang_logo_uptoken(request, bang_id):
+    policy = qiniu.rs.PutPolicy(QINIU_UPLOAD_PUBLIC)
+    uptoken = policy.token()
+    rt = {
+        "uptoken": uptoken
+    }
+    return Response(rt)
 
 
 @api_view(["GET"])
